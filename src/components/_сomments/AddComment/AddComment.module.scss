@@ -1,0 +1,36 @@
+.wrap {
+  padding: 24px 34px;
+  background: #fff;
+  border-radius: 10px;
+}
+.title {
+  font-weight: 700;
+  font-size: 18px;
+  color: #3a4374;
+  margin-bottom: 24px;
+}
+.textarea {
+    border: 1px solid transparent;
+    transition: .2s ease-in;
+  background: #f7f8fd;
+  border-radius: 5px;
+  padding: 16px 24px;
+  height: 80px;
+  resize: none;
+  width: 100%;
+  font-size: 15px;
+  color: #3a4374;
+  &:focus{
+    border: 1px solid #4661e6;
+  }
+}
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+.text {
+  font-size: 15px;
+  color: #647196;
+}

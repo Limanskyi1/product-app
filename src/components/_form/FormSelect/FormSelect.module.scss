@@ -1,0 +1,62 @@
+.selectContainer {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+}
+
+.arrow {
+  position: absolute;
+  top: 43%;
+  right: 24px;
+  transition: 0.3s ease-in-out;
+}
+
+.selected {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  height: 48px;
+  background: #f7f8fd;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #3a4374;
+}
+
+.dropdown {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 10px 40px -7px rgba(55, 63, 104, 0.35);
+  background: #fff;
+  border-radius: 10px;
+}
+
+.option {
+  padding: 12px 24px;
+  transition: 0.3s ease-in-out;
+  font-size: 16px;
+  color: #647196;
+  cursor: pointer;
+  &:not(:last-of-type){
+    border-bottom: 1px solid #dfdcdc;
+  }
+  &:hover {
+    color: #ad1fea;
+  }
+}
+
+.optionActive{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &::after{
+    content: "";
+    display: block;
+    width: 11px;
+    height: 7px;
+    background: url("/selected-icon.svg") no-repeat center/contain;
+  }
+}

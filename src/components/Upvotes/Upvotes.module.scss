@@ -1,0 +1,32 @@
+.upvote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    border-radius: 10px;
+    background: #f2f4fe;
+    padding: 8px;
+    width: fit-content;
+    align-self: flex-start;
+    min-width: 34px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    &:hover{
+      background: #cfd7ff;
+    }
+    span {
+      font-weight: 700;
+      font-size: 13px;
+      color: #3a4374;
+    }
+  }
+ 
+.disabled{
+  background: #4661e6;
+  span{
+    color: #fff;
+  }
+  &:hover{
+    background: #4661e6;
+  }
+}

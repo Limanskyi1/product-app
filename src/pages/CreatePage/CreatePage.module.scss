@@ -1,0 +1,59 @@
+.createPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  max-width: 580px;
+  margin: 0 auto;
+}
+.back{
+  align-self: flex-start;
+}
+.wrapper{
+  padding: 50px 40px;
+  border-radius: 10px;
+  background: #fff;
+  width: 100%;
+  position: relative;
+}
+.form {
+  
+}
+.mainTitle {
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.01em;
+  color: #3a4374;
+  margin-bottom: 40px;
+}
+
+.ball{
+  position: absolute;
+  top: -24px;
+  left: 24px;
+
+}
+.field{
+  margin-bottom: 24px;
+  & > p:first-of-type{
+    font-weight: 700;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  color: #3a4374;
+  }
+  & > p:last-of-type{
+    font-size: 14px;
+  color: #647196;
+  margin-bottom: 16px;
+  }
+}
+
+.btns{
+  display: flex;
+  justify-content: end;
+  gap: 16px;
+  align-items: center;
+}
+
+

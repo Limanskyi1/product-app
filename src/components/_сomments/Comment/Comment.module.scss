@@ -1,0 +1,44 @@
+.comment {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+.image {
+  width: 40px;
+  height: 40px;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  span {
+    font-weight: 600;
+    font-size: 13px;
+    color: #4661e6;
+    cursor: pointer;
+  }
+}
+.name {
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  color: #3a4374;
+  font-weight: 700;
+}
+.username {
+  font-size: 14px;
+  color: #647196;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.text {
+  font-size: 15px;
+  color: #647196;
+}
