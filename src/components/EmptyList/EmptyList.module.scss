@@ -5,6 +5,7 @@
   padding: 110px 40px;
   text-align: center;
   @include flex(center,space-between);
+  flex-direction: column;
   img {
     max-width: 130px;
     width: 100%;
