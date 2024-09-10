@@ -1,32 +1,32 @@
+@import '../../styles/mixins.scss';
 .upvote {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     gap: 6px;
     border-radius: 10px;
-    background: #f2f4fe;
+    background: var(--c-white2);
     padding: 8px;
     width: fit-content;
     align-self: flex-start;
     min-width: 34px;
     cursor: pointer;
     transition: .3s ease-in-out;
+    @include flex(center,space-between);
+    flex-direction: column;
     &:hover{
       background: #cfd7ff;
     }
     span {
       font-weight: 700;
       font-size: 13px;
-      color: #3a4374;
+      color: var(--c-dark-blue2);
     }
   }
  
 .disabled{
-  background: #4661e6;
+  background: var( --c-blue);
   span{
-    color: #fff;
+    color: var(--c-white);
   }
   &:hover{
-    background: #4661e6;
+    background: var(--c-blue);
   }
 }

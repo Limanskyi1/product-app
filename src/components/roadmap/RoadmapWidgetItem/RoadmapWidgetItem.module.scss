@@ -12,12 +12,12 @@
   border-radius: 50%;
 }
 .text {
-  font-size: 16px;
-  color: #647196;
+  font-size: clamp(14px,1.5vw,16px);
+  color: var(--c-gray);
   flex: 1;
 }
 .count {
   font-weight: 700;
-  font-size: 16px;
-  color: #647196;
+  font-size: clamp(14px,1.5vw,16px);
+  color: var(--c-gray);
 }

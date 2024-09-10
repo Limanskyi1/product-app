@@ -1,3 +1,5 @@
+@import '../../../styles/mixins.scss';
+
 .selectContainer {
   position: relative;
   width: 100%;
@@ -12,15 +14,13 @@
 }
 
 .selected {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 12px 24px;
   height: 48px;
-  background: #f7f8fd;
   border-radius: 5px;
-  font-size: 15px;
-  color: #3a4374;
+  color: var(--c-dark-blue2);
+  background: var(--c-white3);
+  @include flex(center,space-between);
+  @include adaptiv-font(15,14);
 }
 
 .dropdown {
@@ -30,28 +30,26 @@
   right: 0;
   z-index: 1000;
   box-shadow: 0 10px 40px -7px rgba(55, 63, 104, 0.35);
-  background: #fff;
+  background: var(--c-white);
   border-radius: 10px;
 }
 
 .option {
   padding: 12px 24px;
   transition: 0.3s ease-in-out;
-  font-size: 16px;
-  color: #647196;
   cursor: pointer;
+  color: var(--c-gray);
+  @include adaptiv-font(16,15);
   &:not(:last-of-type){
     border-bottom: 1px solid #dfdcdc;
   }
   &:hover {
-    color: #ad1fea;
+    color: var(--c-pink);
   }
 }
 
 .optionActive{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex(center,space-between);
   &::after{
     content: "";
     display: block;

@@ -1,3 +1,4 @@
+@import '../../../styles/mixins.scss';
 .col {
   & > div:not(:last-of-type){
     margin-bottom: 24px;
@@ -5,15 +6,12 @@
 }
 
 .name {
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: -0.01em;
-  color: #3a4374;
   margin-bottom: 4px;
+  @include heading3;
 }
 
 .description {
-  font-size: 16px;
-  color: #647196;
+  color: var(--c-gray);
   margin-bottom: 32px;
+  @include adaptiv-font(16,15);
 }

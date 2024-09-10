@@ -1,0 +1,12 @@
+@import "../../styles/mixins.scss";
+
+.homeLayout {
+  display: grid;
+  grid-template-columns: 0.65fr 2fr;
+  gap: 30px;
+  @include pt(50,94);
+  @include pb(30,40);
+  @media (max-width:992px) {
+    grid-template-columns: 1fr;
+  }
+}

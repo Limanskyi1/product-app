@@ -1,13 +1,13 @@
 .textarea {
-  background: #f7f8fd;
   border-radius: 5px;
   width: 100%;
   padding: 12px 20px;
   font-size: 15px;
-  color: #3a4374;
-  font-family: "Jost", sans-serif;
   height: 96px;
   resize: none;
+  color: var(--c-dark-blue2);
+  font-family: var(--font-family);
+  background: var(--c-white3);
 }
 
 .error{

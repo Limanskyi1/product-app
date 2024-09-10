@@ -1,29 +1,31 @@
+@import './reset.scss';
+@import './btns.scss';
+@import './mixins.scss';
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  outline: none;
-  border: none;
-  background: transparent;
-  box-sizing: border-box;
-  list-style-type: none;
-  text-decoration: none;
+
+:root {
+  --c-pink:#ad1fea;
+  --c-blue:#4661e6;
+  --c-light-blue:#62bcfa;
+  --c-dark-blue:#373f68;
+  --c-dark-blue2:#3a4374;
+  --c-white:#fff;
+  --c-white2:#f2f4ff;
+  --c-white3:#f7f8fd;
+  --c-gray:#647196;
+  --c-orange:#f49f85;
+  --font-family: "Jost", sans-serif;
 }
 
+
 body {
-  font-family: "Jost", sans-serif;
-  padding-top: 94px;
-  padding-bottom: 40px;
-  background: #f7f8fd;
+  font-family: var(--font-family);
+  background: var(--c-white3);
 }
 .container {
   max-width: 1100px;
   margin: 0 auto;
-}
-.mainLayout {
-  display: grid;
-  grid-template-columns: 0.65fr 2fr;
-  gap: 30px;
+  padding: 0 1.5rem;
 }
 
 .flex-col {
@@ -35,52 +37,3 @@ body {
 }
 
 // Btns
-.addFeedbackBtn {
-  border-radius: 10px;
-  background: #ad1fea;
-  padding: 12px 24px;
-  font-weight: 700;
-  font-size: 14px;
-  color: #f2f4fe;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-  &:hover {
-    background: #c75af6;
-  }
-}
-.cancelBtn {
-  border-radius: 10px;
-  background: #656ea3;
-  padding: 12px 24px;
-  font-weight: 700;
-  font-size: 14px;
-  color: #f2f4fe;
-  cursor: pointer;
-}
-.backBtn {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  font-weight: 700;
-  font-size: 14px;
-  color: #647196;
-  cursor: pointer;
-}
-.editButton {
-  border-radius: 10px;
-  background: #4661e6;
-  padding: 14px 24px;
-  font-weight: 700;
-  font-size: 14px;
-  color: #f2f4fe;
-  cursor: pointer;
-}
-.deleteBtn {
-  background: #d73737;
-  border-radius: 10px;
-  padding: 12px 24px;
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 14px;
-  color: #f2f4fe;
-}

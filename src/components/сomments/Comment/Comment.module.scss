@@ -1,0 +1,47 @@
+@import "../../../styles/mixins.scss";
+
+.comment {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+.image {
+  width: 40px;
+  height: 40px;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+}
+
+.top {
+  @include mb(14,16);
+  @include flex(center,space-between);
+  span {
+    font-weight: 600;
+    color: var(--c-blue);
+    cursor: pointer;
+    @include adaptiv-font(13,12);
+  }
+}
+
+.name {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--c-dark-blue2);
+  @include adaptiv-font(14,13);
+}
+
+.username {
+  color: var(--c-gray);
+  @include adaptiv-font(14,13);
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.text {
+  color: var(--c-gray);
+  @include adaptiv-font(15,14);
+
+}

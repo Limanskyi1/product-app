@@ -15,7 +15,8 @@ Here are some features that will be added in future releases:
 
 RWD: Responsive Web Design.
 Save Liked/Upvoted Items.
-Page Not Found (404) & Error Pages
+Page Not Found (404) & Error Pages - ✅
 Unit Testing: Add unit tests using Jest and React Testing Library for better code reliability.
 Create a few itils for formating titles,descs.
 Add drag and drop functionality
+Add get params to url for current tag and sort

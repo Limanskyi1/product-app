@@ -1,27 +1,24 @@
+@import '../../styles/mixins.scss';
 .emptyList {
-  background: #fff;
+  background: var(--c-white);
   border-radius: 10px;
   padding: 110px 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
+  @include flex(center,space-between);
   img {
     max-width: 130px;
     width: 100%;
     margin-bottom: 50px;
   }
   h2 {
-    font-weight: 700;
-    font-size: 24px;
-    color: #3a4374;
     margin-bottom: 16px;
+    @include heading1;
   }
   p {
     width: 56.3%;
-    font-size: 16px;
     text-align: center;
-    color: #647196;
+    color: var(--c-gray);
     margin-bottom: 48px;
+    @include adaptiv-font(16,15);
   }
 }

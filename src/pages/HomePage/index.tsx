@@ -3,6 +3,8 @@ import { Logo, Navbar, ProductsList, RoadmapWidget, Tags } from "../../component
 import { useAppContext } from "../../hooks";
 import { HomeLayout } from "../../layouts";
 import { productApi } from "../../api/ProductApi";
+import classes from './HomePage.module.scss';
+
 export const HomePage = () => {
   const { suggestions,url,sortParams,setSuggestions } = useAppContext();
   const [loading,setLoading] = useState<boolean>(true);
@@ -25,12 +27,12 @@ export const HomePage = () => {
 
   return (
     <HomeLayout>
-      <div className="flex-col gap-24">
+      <div className={classes.leftSide}>
         <Logo />
         <Tags/>
         <RoadmapWidget/>
       </div>
-      <div className="flex-col gap-24">
+      <div className={classes.rightSide}>
         <Navbar suggestionsCount={suggestions.length}/>
         <ProductsList products={suggestions} loading={loading}/>
       </div>

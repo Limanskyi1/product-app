@@ -1,23 +1,23 @@
 .tags {
   padding: 24px 50px 24px 24px;
-  background: #fff;
+  background: var(--c-white);
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   border-radius: 10px;
   li {
-    background: #f2f4ff;
+    background: var(--c-white2);
     border-radius: 10px;
     padding: 5px 16px;
     font-weight: 600;
     font-size: 13px;
-    color: #4661e6;
+    color: var(--c-blue);
     cursor: pointer;
     transition: .3s ease-in-out;
   }
 }
 
 li.activeTag{
-  background: #4661e6;
-  color: #fff;
+  background: var(--c-blue);
+  color: var(--c-white);
 }
