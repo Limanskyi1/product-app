@@ -25,7 +25,7 @@ export const EditForm = ({
   onDelete,
   onGoBack
 }: EditFormProps) => {
-  const { register, handleSubmit, formState: { errors }, reset } = useForm({
+  const { register, handleSubmit, formState: { errors } } = useForm({
     defaultValues: {
       title: product?.title,
       category: product?.category,
