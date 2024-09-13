@@ -11,20 +11,18 @@ export const RoadmapHeader = () => {
   };
   return (
     <FadeInItemTop>
-      <div className="container">
-        <div className={classes.header}>
-          <div className={classes.leftSide}>
-            <GoBackBtn
-              className={classes.back}
-              mode="dark"
-              onClick={handleClickBack}
-            />
-            <h2>Roadmap</h2>
-          </div>
-          <Link to="/create-product">
-            <Button className="addFeedbackBtn" text="+ Add Feedback" />
-          </Link>
+      <div className={classes.header}>
+        <div className={classes.leftSide}>
+          <GoBackBtn
+            className={classes.back}
+            mode="dark"
+            onClick={handleClickBack}
+          />
+          <h2>Roadmap</h2>
         </div>
+        <Link to="/create-product">
+          <Button className="addFeedbackBtn" text="+ Add Feedback" />
+        </Link>
       </div>
     </FadeInItemTop>
   );

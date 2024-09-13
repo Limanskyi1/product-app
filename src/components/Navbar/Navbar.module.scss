@@ -5,6 +5,11 @@
   border-radius: 10px;
   display: flex;
   align-items: center;
+  @media (max-width: 420px){
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 12px;
+  } 
 }
 
 
@@ -26,6 +31,9 @@
   position: relative;
   margin-left: 38px;
   cursor: pointer;
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
 }
 
 .sortActive{
@@ -96,3 +104,9 @@
 }
 
 
+.add{
+  margin-left: auto;
+  @media (max-width: 420px){
+    margin-left: unset;
+  }
+}

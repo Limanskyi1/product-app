@@ -2,10 +2,13 @@
 .product {
   background: var(--c-white);
   border-radius: 10px;
-  padding: 28px 32px;
+  padding: clamp(20px,2.4vw,28px) clamp(22px,2.7vw,32px);
   display: flex;
   align-items: center;
   transition: 0.3s ease-in-out;
+  @media (max-width: 480px) {
+    flex-wrap: wrap;
+  }
 }
 .titleLink {
   font-weight: 700;
@@ -20,7 +23,14 @@
 }
 
 .productInfo {
-  margin-left: 40px;
+  margin-left: 3vw;
+  padding-right: 1vw;
+  @media (max-width: 480px) {
+    order: 1;
+    margin-left: 0;
+    padding-right: 0;
+    margin-bottom: 5vw;
+  }
   h4 {
     margin-bottom: 4px;
     @include heading3;
@@ -42,4 +52,7 @@
 
 .commentsLink {
   margin-left: auto;
+  @media (max-width: 480px){
+    order: 2;
+  }
 }

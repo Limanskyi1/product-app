@@ -15,6 +15,7 @@
   background: var(--c-dark-blue);
   border-radius: 10px;
   padding: 26px 32px;
+  padding: clamp(20px,2.3vw,26px) clamp(20px,2.6vw,32px); 
   margin-bottom: 48px;
   @include flex(center,space-between);
 }
@@ -24,5 +25,6 @@
   h2 {
     margin-top:8px;
     @include heading1;
+    color: var(--c-white);
   }
 }

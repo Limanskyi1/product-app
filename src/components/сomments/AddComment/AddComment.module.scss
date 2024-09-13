@@ -1,6 +1,6 @@
 @import "../../../styles/mixins.scss";
 .wrap {
-  padding: 24px 34px;
+  padding:  clamp(18px,2.1vw,24px) clamp(22px,2.3vw,34px);
   background: var(--c-white);
   border-radius: 10px;
 }

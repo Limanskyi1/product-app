@@ -1,50 +1,39 @@
+@mixin btnBasicsStyles {
+  border-radius: 10px;
+  padding: 12px clamp(14px, 1.9vw, 24px);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
 .addFeedbackBtn {
-    border-radius: 10px;
-    background: #ad1fea;
-    padding: 12px 24px;
-    font-weight: 700;
-    font-size: 14px;
-    color: #f2f4fe;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-    &:hover {
-      background: #c75af6;
-    }
+  background: #ad1fea;
+  color: #f2f4fe;
+  @include btnBasicsStyles;
+  &:hover {
+    background: #c75af6;
   }
-  .cancelBtn {
-    border-radius: 10px;
-    background: #656ea3;
-    padding: 12px 24px;
-    font-weight: 700;
-    font-size: 14px;
-    color: #f2f4fe;
-    cursor: pointer;
-  }
-  .backBtn {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    font-weight: 700;
-    font-size: 14px;
-    color: #647196;
-    cursor: pointer;
-  }
-  .editButton {
-    border-radius: 10px;
-    background: #4661e6;
-    padding: 14px 24px;
-    font-weight: 700;
-    font-size: 14px;
-    color: #f2f4fe;
-    cursor: pointer;
-  }
-  .deleteBtn {
-    background: #d73737;
-    border-radius: 10px;
-    padding: 12px 24px;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 14px;
-    color: #f2f4fe;
-  }
-  
+}
+.cancelBtn {
+  background: #656ea3;
+  color: #f2f4fe;
+  @include btnBasicsStyles;
+}
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #647196;
+  @include btnBasicsStyles;
+}
+.editButton {
+  background: #4661e6;
+  color: #f2f4fe;
+  @include btnBasicsStyles;
+}
+.deleteBtn {
+  background: #d73737;
+  color: #f2f4fe;
+  @include btnBasicsStyles;
+}

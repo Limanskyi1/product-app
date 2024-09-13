@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { IComment } from "../../types";
-import { capitalizeFirstLetter } from "../../utils";
+import { formatString } from "../../utils";
 import classes from "./Product.module.scss";
 import { CommentCounter, Upvotes } from "../index";
 import { Link } from "react-router-dom";
@@ -32,7 +32,7 @@ export const Product: FC<IProductProps> = ({
           {title}
         </Link>
         <p>{description}</p>
-        <span>{capitalizeFirstLetter(category)}</span>
+        <span>{formatString(category)}</span>
       </div>
       <Link className={classes.commentsLink} to={`/details/${id}`}>
         <CommentCounter comments={comments} />

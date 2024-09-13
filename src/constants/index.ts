@@ -28,7 +28,7 @@ export const sortArray: SortType[] = [
   },
 ];
 
-export const categories: string[] = ["Feature", "UI", "UX", "Enhancement", "Bug"];
+export const categories: string[] = ["feature", "UI", "UX", "enhancement", "bug"];
 export const statuses:string[] = ["suggestion","planned","in-progress","live"];
 
 

@@ -18,8 +18,6 @@ export const useFetchRoadmapProducts = () => {
       try {
         const products = await productApi.getAllProducts();
         const filteredProducts = products.filter((product) => product.status !== "suggestion");
-
-        // Create an object to categorize products by status
         const counts: { [key: string]: IProduct[] } = {};
 
         filteredProducts.forEach((product) => {
@@ -29,8 +27,6 @@ export const useFetchRoadmapProducts = () => {
             counts[product.status] = [product];
           }
         });
-
-        // Map the counts object to an array of IRoadmapItem
         const roadmapArray: IRoadmapItem[] = Object.keys(counts).map(status => ({
           status,
           items: counts[status]

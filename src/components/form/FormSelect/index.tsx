@@ -1,6 +1,7 @@
 import { Dispatch, FC, SetStateAction, useState } from "react";
 import { FadeInItem } from "../../../libs";
 import classes from './FormSelect.module.scss';
+import { formatString } from "../../../utils";
 
 interface IFormSelect {
   value:string;
@@ -11,7 +12,7 @@ interface IFormSelect {
 export const FormSelect:FC<IFormSelect> = ({value,setValue,options}) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleChange = (option: any) => {
+  const handleChange = (option: string) => {
     setValue(option);
     setIsOpen(false);
   };
@@ -22,7 +23,7 @@ export const FormSelect:FC<IFormSelect> = ({value,setValue,options}) => {
 
   return (
     <div className={classes.selectContainer} onClick={toggleDropdown}>
-      <p className={classes.selected}>{value}</p>
+      <p className={classes.selected}>{formatString(value)}</p>
       <img style={{transform: `rotate(${isOpen ? "0deg" : "180deg"})`}} className={classes.arrow} src="/arrow-select.svg" alt="icon arrow"/>
       {isOpen && (
         <FadeInItem>
@@ -30,12 +31,10 @@ export const FormSelect:FC<IFormSelect> = ({value,setValue,options}) => {
             {options.map((option) => (
               <li
                 key={option}
-                className={`${classes.option} ${
-                  option === value ? `${classes.optionActive}` : ""
-                }`}
+                className={`${classes.option} ${option === value ? `${classes.optionActive}` : ""}`}
                 onClick={() => handleChange(option)}
               >
-                {option}
+                {formatString(option)}
               </li>
             ))}
           </ul>

@@ -1,0 +1,6 @@
+@import '../../styles/mixins.scss';
+.roadmapPage{
+    padding: 0 2.5vw;
+    @include pt(30, 60);
+    @include pb(20, 40);
+}

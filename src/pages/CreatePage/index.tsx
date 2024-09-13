@@ -1,15 +1,14 @@
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { FormInput ,FormSelect,Button, GoBackBtn, FormTextarea} from "../../components";
-import { categories ,newFeedback} from '../../constants';
+import { categories} from '../../constants';
 import { useState } from 'react';
-import { productApi } from '../../api/ProductApi';
 import { useNavigate } from 'react-router-dom';
 import { FadeInItemBottom } from '../../libs';
-import { ToastContainer, toast } from 'react-toastify';
-import { generateId } from '../../utils';
+import { ToastContainer } from 'react-toastify';
 import classes from "./CreatePage.module.scss";
+import { useProductCreate } from '../../hooks';
 
-interface FormValues {
+export interface FormValues {
   title: string;
   category: string;
   description: string;
@@ -20,25 +19,7 @@ export const CreatePage = () => {
   const { register, handleSubmit, formState: { errors } , reset} = useForm<FormValues>();
   const [selectValue,setSelectValue] = useState<string>(categories[0]);
 
-  const onSubmit: SubmitHandler<FormValues> = async (formData) => {
-    const newProduct = {
-      ...newFeedback,
-      id: generateId(),
-      title:formData.title,
-      description: formData.description,
-      category:selectValue.toLowerCase(),
-    };
-    toast.info("Creating");
-    console.log(newProduct);
-    try {
-      await productApi.createNewProduct(newProduct);
-      toast.success("Created successfully!");
-      reset();
-      setTimeout(() => navigate("/"),1000);
-    } catch (error) {
-        console.error(error);
-    }
-  };
+  const { onSubmit } = useProductCreate(selectValue,reset);
 
   const handleClickBack = () => {
     navigate(-1);

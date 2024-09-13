@@ -16,7 +16,7 @@ export const RoadmapTable = () => {
 
 
   return (
-    <div className={`container ${classes.table}`}>
+    <div className={classes.table}>
       {renderCols()}
     </div>
   );

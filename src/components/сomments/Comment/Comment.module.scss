@@ -2,7 +2,7 @@
 
 .comment {
   display: flex;
-  gap: 32px;
+  gap: clamp(14px,1.8vw,32px);
   margin-bottom: 24px;
 }
 

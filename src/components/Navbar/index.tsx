@@ -4,17 +4,19 @@ import { Sort } from "./Sort";
 import { Suggestions } from "./Suggestions";
 import { Button } from "../Buttons";
 import { Link } from "react-router-dom";
+import { useWindowSize } from "../../hooks";
 
 interface INavbar {
   suggestionsCount: number;
 }
 
 export const Navbar: FC<INavbar> = ({ suggestionsCount }) => {
+  const {width} = useWindowSize();
   return (
     <div className={classes.navbar}>
-      <Suggestions count={suggestionsCount} />
+      {width > 768 && <Suggestions count={suggestionsCount} />}
       <Sort />
-      <Link style={{marginLeft: "auto"}} to="/create-product">
+      <Link className={classes.add} to="/create-product">
         <Button className="addFeedbackBtn" text="+ Add Feedback" />
       </Link>
     </div>

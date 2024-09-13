@@ -11,6 +11,9 @@
     transition: .3s ease-in-out;
     @include flex(center,space-between);
     flex-direction: column;
+    @media (max-width: 480px){
+      order: 2;
+    }
     &:hover{
       background: #cfd7ff;
     }

@@ -1,6 +1,6 @@
 import { FadeInItemBottom } from "../../../libs";
 import { IProduct } from "../../../types";
-import { createDescription, getDelay } from "../../../utils";
+import { createDescription, formatString, getDelay } from "../../../utils";
 import { RoadmapProduct } from "../RoadmapProduct";
 import classes from "./RoadmapCol.module.scss";
 
@@ -13,7 +13,7 @@ export const RoadmapCol = ({ name, items }: RoadmapColProps) => {
   return (
     <div className={classes.col}>
       <p className={classes.name}>
-        {name} ({items.length})
+        {formatString(name)} ({items.length})
       </p>
       <p className={classes.description}>{createDescription(name)}</p>
       {items.map((item,index) => (

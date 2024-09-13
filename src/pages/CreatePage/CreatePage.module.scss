@@ -1,11 +1,16 @@
+@import '../../styles/mixins.scss';
 .createPage {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 70px;
-  max-width: 580px;
+  gap: clamp(30px,5vw,70px);
+  max-width: 600px;
   margin: 0 auto;
+  padding: 0 2.5vw;
+  @include mt(20,90);
+  @include mb(20,40);
+
 }
 .back{
   align-self: flex-start;
@@ -21,11 +26,9 @@
   
 }
 .mainTitle {
-  font-weight: 700;
-  font-size: 24px;
-  letter-spacing: -0.01em;
-  color: #3a4374;
-  margin-bottom: 40px;
+  @include mb(24,40);
+  @include heading-main;
+  @include adaptiv-font(24,19);
 }
 
 .ball{
