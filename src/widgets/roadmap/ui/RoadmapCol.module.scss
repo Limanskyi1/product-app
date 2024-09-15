@@ -1,0 +1,17 @@
+@import '@/app/styles/mixins.scss';
+.col {
+  & > div:not(:last-of-type){
+    margin-bottom: 24px;
+  }
+}
+
+.name {
+  margin-bottom: 4px;
+  @include heading3;
+}
+
+.description {
+  color: var(--c-gray);
+  margin-bottom: 32px;
+  @include adaptiv-font(16,15);
+}

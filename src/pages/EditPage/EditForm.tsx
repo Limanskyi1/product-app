@@ -1,30 +1,23 @@
-import { useForm } from 'react-hook-form';
-import { FormInput, FormSelect, Button, GoBackBtn, FormTextarea } from "../../components";
-import { categories, statuses } from '../../constants';
+import { IProduct } from "@/entities/product/model/types";
+import { categories } from "@/features/filters/constants/categories";
+import { ICategory } from "@/features/filters/model/types";
+import { handleProductUpdate, handleProductDelete } from "@/features/product";
+import { StatusType } from "@/features/sortProducts/model/sort";
+import { statuses } from "@/shared/constants";
+import { GoBackBtn,Button, FormInput, FormSelect, FormTextarea } from "@/shared/ui";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import classes from "./EditPage.module.scss";
-import { Dispatch, SetStateAction } from 'react';
 
 interface EditFormProps {
-  product: any;
-  category: string;
-  setCategory: Dispatch<SetStateAction<string>>
-  status: string;
-  setStatus: Dispatch<SetStateAction<string>>;
-  onSubmit: (formData: any) => void;
-  onDelete: () => void;
-  onGoBack: () => void;
+  product: IProduct;
 }
 
 export const EditForm = ({
   product,
-  category,
-  setCategory,
-  status,
-  setStatus,
-  onSubmit,
-  onDelete,
-  onGoBack
 }: EditFormProps) => {
+  const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors } } = useForm({
     defaultValues: {
       title: product?.title,
@@ -32,13 +25,22 @@ export const EditForm = ({
       description: product?.description
     }
   });
+  const [category, setCategory] = useState<ICategory>(categories[0]);
+  const [status, setStatus] = useState<StatusType>(statuses[0] as StatusType);
+
+  useEffect(() => {
+    if (product) {
+      setCategory(product.category);
+      setStatus(product.status as StatusType);
+    }
+  }, [product]);
 
   return (
     <div className={classes.editPage}>
-      <GoBackBtn onClick={onGoBack} className={`backBtn ${classes.back}`} mode='light' />
+      <GoBackBtn onClick={()=> navigate(-1)} className={`backBtn ${classes.back}`} mode='light' />
       <div className={classes.wrapper}>
         <img className={classes.ball} src="/edit-icon.svg" alt="" />
-        <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
+        <form className={classes.form} onSubmit={handleSubmit((formData) => handleProductUpdate(formData, category, status, product.id as string))}>
           <h2 className={classes.mainTitle}>Editing ‘{product?.title}’</h2>
           <div className={classes.field}>
             <p>Feedback Title</p>
@@ -67,8 +69,8 @@ export const EditForm = ({
             />
           </div>
           <div className={classes.btns}>
-            <Button onClick={onDelete} text='Delete' className='deleteBtn' />
-            <Button onClick={onGoBack} text='Cancel' className='cancelBtn' />
+            <Button onClick={() => handleProductDelete(product.id as string)} text='Delete' className='deleteBtn' />
+            <Button onClick={()=> navigate(-1)} text='Cancel' className='cancelBtn' />
             <button className='addFeedbackBtn'>Update Feedback</button>
           </div>
         </form>

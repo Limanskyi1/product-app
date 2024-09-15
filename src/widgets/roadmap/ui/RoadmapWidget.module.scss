@@ -1,0 +1,53 @@
+@import '@/app/styles/mixins.scss';
+.widget {
+  padding: 20px 24px;
+  background: var(--c-white);
+  border-radius: 10px;
+}
+
+.top {
+  margin-bottom: 24px;
+  @include flex(center,space-between);
+  p {
+    @include heading3;
+  }
+  a {
+    font-weight: 600;
+    font-size: 13px;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: var(--c-blue);
+  }
+}
+
+.loading{
+  width: 60px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ball {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  background: red;
+  border-radius: 50%;
+}
+.text {
+  font-size: clamp(14px,1.5vw,16px);
+  color: var(--c-gray);
+  flex: 1;
+}
+.count {
+  font-weight: 700;
+  font-size: clamp(14px,1.5vw,16px);
+  color: var(--c-gray);
+}
+
+

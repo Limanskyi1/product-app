@@ -1,0 +1,12 @@
+@import '@/app/styles/mixins.scss';
+
+.comment {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    span {
+      font-weight: 700;
+      color: var(--c-dark-blue2);
+      @include adaptiv-font(16,15);
+    }
+  }

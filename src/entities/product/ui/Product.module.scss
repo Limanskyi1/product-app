@@ -1,0 +1,58 @@
+@import "@/app/styles/mixins.scss";
+.product {
+  background: var(--c-white);
+  border-radius: 10px;
+  padding: clamp(20px,2.4vw,28px) clamp(22px,2.7vw,32px);
+  display: flex;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+  @media (max-width: 480px) {
+    flex-wrap: wrap;
+  }
+}
+.titleLink {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(-c-dark-blue2);
+  margin-bottom: 4px;
+  transition: 0.3s ease-in-out;
+  @include adaptiv-font(18, 16);
+  &:hover {
+    color: #4661e6;
+  }
+}
+
+.productInfo {
+  margin-left: 3vw;
+  padding-right: 1vw;
+  @media (max-width: 480px) {
+    order: 1;
+    margin-left: 0;
+    padding-right: 0;
+    margin-bottom: 5vw;
+  }
+  h4 {
+    margin-bottom: 4px;
+    @include heading3;
+  }
+  p {
+    color: var(--c-gray);
+    margin-bottom: 12px;
+    @include adaptiv-font(16,15);
+  }
+  span {
+    background: var(--c-white2);
+    border-radius: 10px;
+    padding: 5px 16px;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--c-blue);
+  }
+}
+
+.commentsLink {
+  margin-left: auto;
+  @media (max-width: 480px){
+    order: 2;
+  }
+}

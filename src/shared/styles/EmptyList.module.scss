@@ -1,0 +1,26 @@
+@import '@/app/styles/mixins.scss';
+
+.emptyList {
+  background: var(--c-white);
+  border-radius: 10px;
+  padding: 110px 40px;
+  text-align: center;
+  @include flex(center,space-between);
+  flex-direction: column;
+  img {
+    max-width: 130px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  h2 {
+    margin-bottom: 16px;
+    @include heading1;
+  }
+  p {
+    width: 56.3%;
+    text-align: center;
+    color: var(--c-gray);
+    margin-bottom: 48px;
+    @include adaptiv-font(16,15);
+  }
+}
