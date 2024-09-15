@@ -1,10 +1,10 @@
 import { useAppContext } from "@/shared/hooks";
 import { HomeLayout } from "@/shared/layouts";
 import classes from "./HomePage.module.scss";
-import { LogoBanner } from "@/shared/ui/LogoBanner";
+import { LogoBanner } from "@/shared/ui";
 import { Navbar } from "@/widgets/navbar";
 import { Categories } from "@/features/filters";
-import { RoadmapWidget } from "@/widgets/roadmap/ui/RoadmapWidget";
+import { RoadmapWidget } from "@/widgets/roadmap";
 import { ProductsList } from "@/entities/product";
 
 export const HomePage = () => {

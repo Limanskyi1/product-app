@@ -1,12 +1,11 @@
 import { CreatePage } from "@/pages/create-page";
 import { DetailsPage } from "@/pages/details-page";
-import { EditPage } from "@/pages/EditPage";
-import { HomePage } from "@/pages/HomePage";
-import { NotFoundPage } from "@/pages/NotFoundPage";
-import { RoadmapPage } from "@/pages/RoadmapPage";
+import { EditPage } from "@/pages/edit-page";
+import { HomePage } from "@/pages/home-page";
+import { NotFoundPage } from "@/pages/not-found-page";
+import { RoadmapPage } from "@/pages/roadmap-page";
 import { Routes, Route } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-
 export const RouterProvider = () => {
   return (
     <Router>

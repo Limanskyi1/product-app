@@ -1,6 +1,6 @@
 import { CommentsList } from "@/entities/comment";
 import { Product } from "@/entities/product";
-import { AddComment } from "@/features/addComment";
+import { AddComment } from "@/features/add-comment";
 import { Spinner, GoBackBtn,Button } from "@/shared/ui";
 import { useNavigate, Link } from "react-router-dom";
 import { ToastContainer } from "react-toastify";

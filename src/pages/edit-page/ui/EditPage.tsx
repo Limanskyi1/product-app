@@ -1,5 +1,5 @@
 import { ToastContainer } from "react-toastify";
-import { EditForm } from "./EditForm";
+import { EditForm } from "@/features/edit-form";
 import { Spinner } from "@/shared/ui";
 import { IProduct } from "@/entities/product/model/types";
 import { useParams } from "react-router-dom";
@@ -13,13 +13,11 @@ export const EditPage = () => {
   if (loading) {
     return <Spinner className={classes.loader} />;
   }
-  
+
   return (
-    <>
+    <div className={classes.editPage}>
       <ToastContainer />
-      <EditForm
-        product={product as IProduct}
-      />
-    </>
+      <EditForm product={product as IProduct} />
+    </div>
   );
 };

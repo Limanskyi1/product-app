@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
-import { GoBackBtn } from "@/shared/ui/GoBackBtn";
-import { Button } from "@/shared/ui/Button";
+import { GoBackBtn } from "@/shared/ui";
+import { Button } from "@/shared/ui";
 import classes from "./RoadmapHeader.module.scss";
 import { FadeInItemTop } from "@/shared/libs/createMotionWrapper";
 

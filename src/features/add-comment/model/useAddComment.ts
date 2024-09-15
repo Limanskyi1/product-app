@@ -1,9 +1,9 @@
 import { toast } from "react-toastify";
-import data from "../../../../data.json";
 import { generateId } from "@/shared/utils";
 import { productApi } from "@/shared/api/ProductApi";
 import { IComment } from "@/entities/comment/model/comment";
 import { Dispatch, SetStateAction } from "react";
+import { currentUser } from "@/entities/user/model/user";
 
 export const useAddComment = (
   commentText: string,
@@ -12,7 +12,6 @@ export const useAddComment = (
   setComments: Dispatch<SetStateAction<IComment[]>>,
   setCommentText: Dispatch<SetStateAction<string>>
 ) => {
-  const { currentUser } = data;
   const handlePostComment = async () => {
     if (!commentText.trim()) {
       toast.error("Comment cannot be empty!");

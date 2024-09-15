@@ -1,6 +1,6 @@
 import { IComment } from "@/entities/comment/model/comment";
 import { ICategory } from "@/features/filters/model/types";
-import { StatusType } from "@/features/sortProducts/model/sort";
+import { StatusType } from "@/features/sort-products/model/sort";
 
 export interface IProduct {
   id: number | string;

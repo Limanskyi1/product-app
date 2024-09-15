@@ -1,5 +1,5 @@
 import { ICategory } from "@/features/filters/model/types";
-import { StatusType } from "@/features/sortProducts/model/sort";
+import { StatusType } from "@/features/sort-products/model/sort";
 import { productApi } from "@/shared/api/ProductApi";
 import { toast } from "react-toastify";
  
