@@ -1,6 +1,5 @@
 import { IProduct } from "@/entities/product/model/types";
 import { categories } from "@/features/filters/constants/categories";
-import { handleProductUpdate } from "@/features/product";
 import { statuses } from "@/shared/constants";
 import {
   GoBackBtn,
@@ -37,11 +36,8 @@ export const EditForm = ({ product }: EditFormProps) => {
     status,
     setCategory,
     setStatus,
+    onSubmitForm,
   } = useEditForm(product);
-
-  const onSubmitForm = (formData: Partial<IProduct>) => {
-    handleProductUpdate(formData, category, status, product.id as string);
-  };
 
   return (
     <>

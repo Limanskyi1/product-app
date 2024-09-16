@@ -1,5 +1,5 @@
 import { ToastContainer } from "react-toastify";
-import { EditForm } from "@/features/edit-form";
+import { EditForm } from "@/widgets/edit-form";
 import { Spinner } from "@/shared/ui";
 import { IProduct } from "@/entities/product/model/types";
 import { useParams } from "react-router-dom";

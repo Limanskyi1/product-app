@@ -1,6 +1,5 @@
 import { FC } from "react";
 import classes from "./Comment.module.scss";
-
 interface IComment {
   imgUrl: string;
   name: string;

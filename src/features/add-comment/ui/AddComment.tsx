@@ -1,13 +1,13 @@
 import { Button } from "@/shared/ui/Button";
-import classes from "./AddComment.module.scss";
 import { ChangeEvent, Dispatch, FC, SetStateAction, useState } from "react";
 import { IComment } from "@/entities/comment/model/comment";
 import { useAddComment } from "../model/useAddComment";
+import classes from "./AddComment.module.scss";
 
 interface IAddComment {
-  comments:IComment[],
+  comments: IComment[];
   setComments: Dispatch<SetStateAction<IComment[]>>;
-  productId:string;
+  productId: string;
 }
 
 export const AddComment: FC<IAddComment> = ({
@@ -17,7 +17,13 @@ export const AddComment: FC<IAddComment> = ({
 }) => {
   const [commentText, setCommentText] = useState<string>("");
 
-  const {handlePostComment} = useAddComment(commentText,comments,productId,setComments,setCommentText);
+  const { handlePostComment } = useAddComment(
+    commentText,
+    comments,
+    productId,
+    setComments,
+    setCommentText
+  );
 
   return (
     <div className={classes.wrap}>

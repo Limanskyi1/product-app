@@ -1,11 +1,12 @@
 import { IProduct } from "@/entities/product/model/types";
 import { categories } from "@/features/filters/constants/categories";
 import { ICategory } from "@/features/filters/model/types";
-import { handleProductDelete } from "@/features/product";
+import { handleProductDelete, handleProductUpdate } from "@/features/product";
 import { StatusType } from "@/features/sort-products/model/sort";
 import { statuses } from "@/shared/constants";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export const useEditForm = (product: IProduct) => {
   const navigate = useNavigate();
@@ -20,7 +21,9 @@ export const useEditForm = (product: IProduct) => {
   }, [product]);
 
   const onClickDelete = async () => {
+    toast.info("Trying to delete product...");
     await handleProductDelete(product.id as string);
+    toast.success("Deleted successfully");
     setTimeout(() => navigate("/"), 1000);
   };
 
@@ -28,11 +31,25 @@ export const useEditForm = (product: IProduct) => {
     navigate(-1);
   };
 
+  const onSubmitForm = (formData: Partial<IProduct>) => {
+    toast.info("Trying to update product...");
+    try {
+      handleProductUpdate(formData, category, status, product.id as string);
+      toast.success("Product updated successfully");
+      setTimeout(() => navigate("/"), 1000);
+    } catch (error) {
+      console.error(error);
+      toast.error("Something went wrong");
+    }
+    
+  };
+
   return {
     handleClickBack,
     onClickDelete,
     setCategory,
     setStatus,
+    onSubmitForm,
     category,
     status,
   };

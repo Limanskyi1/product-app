@@ -19,6 +19,16 @@ class ProductApi {
         }
     }
 
+    async getSuggestions(params:string|undefined):Promise<IProduct[]>{
+        try {
+            const response = await axios.get(`${this.apiUrl}?status=suggestion${params}`);
+            return response.data;
+        } catch (error) {
+            console.error("Failed to get all product", error);
+            return [];
+        }
+    }
+
     async getProductsByParams(pathname:string):Promise<IProduct[]> {
         try {
             const response = await axios.get(`${this.apiUrl}${pathname}`);

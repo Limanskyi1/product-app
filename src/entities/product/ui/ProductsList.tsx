@@ -1,21 +1,24 @@
 import { FC} from "react";
 import { getDelay } from "../../../shared/utils";
-import classes from "./ProductsList.module.scss";
 import { Product } from "@/entities/product";
 import { Spinner } from "@/shared/ui/Spinner";
 import { EmptyList } from "@/shared/ui/EmptyList";
-import { useFetchProducts } from "../model/useFetchProducts";
 import { FadeInItem, FadeInItemBottom } from "@/shared/libs/createMotionWrapper";
+import { IProduct } from "../model/types";
+import classes from "./ProductsList.module.scss";
 
-export const ProductsList:FC = () => {
+interface IProductsList {
+  loading: boolean;
+  products: IProduct[];
+}
 
-  const {loading,suggestions} = useFetchProducts()
+export const ProductsList:FC<IProductsList> = ({loading,products}) => {
 
   if (loading) {
     return <Spinner className={classes.loader} />;
   }
 
-  if (suggestions.length === 0) {
+  if (products.length === 0) {
     return (
       <FadeInItem>
         <EmptyList />
@@ -24,7 +27,7 @@ export const ProductsList:FC = () => {
   }
   return (
     <div className={classes.productsList}>
-      {suggestions.map((item, index) => (
+      {products.map((item, index) => (
         <FadeInItemBottom key={item.id} delay={getDelay(index)}>
           <Product
             upvotes={item.upvotes}

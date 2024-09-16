@@ -1,7 +1,7 @@
 import { FC } from "react";
-import classes from "./CommentsList.module.scss";
 import { Comment } from "./Comment";
 import { IComment } from "../model/comment";
+import classes from "./CommentsList.module.scss";
 
 interface ICommentsList {
   comments: IComment[];

@@ -12,6 +12,7 @@ export const useAddComment = (
   setComments: Dispatch<SetStateAction<IComment[]>>,
   setCommentText: Dispatch<SetStateAction<string>>
 ) => {
+  
   const handlePostComment = async () => {
     if (!commentText.trim()) {
       toast.error("Comment cannot be empty!");
