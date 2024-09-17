@@ -12,7 +12,7 @@ export const Navbar: FC<INavbar> = ({ suggestionsCount }) => {
   const { width } = useWindowSize();
   return (
     <div className={classes.navbar}>
-      { width > 768 && <Suggestions count={suggestionsCount} />}
+      { width > 768 && <Suggestions count={suggestionsCount || 0} />}
       <Sort />
       <Link className={classes.add} to="/create-product">
         <Button className="addFeedbackBtn" text="+ Add Feedback" />

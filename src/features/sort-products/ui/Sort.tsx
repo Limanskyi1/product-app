@@ -2,8 +2,8 @@
 import { useOutsideClick } from "@/shared/hooks";
 import { useRef } from "react";
 import { useSort } from "../model/useSort";
-import classes from "@/widgets/navbar/ui/Navbar.module.scss";
 import { sortArray } from "../constants/sortArray";
+import classes from "@/widgets/navbar/ui/Navbar.module.scss";
 
 export const Sort = () => {
   const { sortValue, isOpen, handleClickSortItem, setIsOpen, toggleSortMenu } = useSort();

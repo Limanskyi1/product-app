@@ -31,10 +31,10 @@ export const useEditForm = (product: IProduct) => {
     navigate(-1);
   };
 
-  const onSubmitForm = (formData: Partial<IProduct>) => {
+  const onSubmitForm = async (formData: Partial<IProduct>) => {
     toast.info("Trying to update product...");
     try {
-      handleProductUpdate(formData, category, status, product.id as string);
+      await handleProductUpdate(formData, category, status, product.id as string);
       toast.success("Product updated successfully");
       setTimeout(() => navigate("/"), 1000);
     } catch (error) {

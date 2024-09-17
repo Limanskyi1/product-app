@@ -14,10 +14,10 @@ Future Features
 Here are some features that will be added in future releases:
 
 RWD: Responsive Web Design - ✅</br>
-Save Liked/Upvoted Items.</br>
 Page Not Found (404) & Error Pages - ✅</br>
 Unit Testing: Add unit tests using Jest and React Testing Library for better code reliability.</br>
+Add drag and drop functionality - ✅</br>
+Add get params to url for current category - ✅</br>
+Re-write to fsd - ✅</br>
 Create a few itils for formating titles,descs - ✅</br>
-Add drag and drop functionality</br>
-Add get params to url for current tag and sort</br>
-Re-write to fsd </br>
+Save Liked/Upvoted Items.</br>
