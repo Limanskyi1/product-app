@@ -1,22 +1,21 @@
-@import './reset.scss';
-@import './btns.scss';
-@import './mixins.scss';
+@import "./reset.scss";
+@import "./btns.scss";
+@import "./mixins.scss";
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-  --c-pink:#ad1fea;
-  --c-blue:#4661e6;
-  --c-light-blue:#62bcfa;
-  --c-dark-blue:#373f68;
-  --c-dark-blue2:#3a4374;
-  --c-white:#fff;
-  --c-white2:#f2f4ff;
-  --c-white3:#f7f8fd;
-  --c-gray:#647196;
-  --c-orange:#f49f85;
+  --c-pink: #ad1fea;
+  --c-blue: #4661e6;
+  --c-light-blue: #62bcfa;
+  --c-dark-blue: #373f68;
+  --c-dark-blue2: #3a4374;
+  --c-white: #fff;
+  --c-white2: #f2f4ff;
+  --c-white3: #f7f8fd;
+  --c-gray: #647196;
+  --c-orange: #f49f85;
   --font-family: "Jost", sans-serif;
 }
-
 
 body {
   font-family: var(--font-family);
@@ -36,4 +35,6 @@ body {
   gap: 24px;
 }
 
-// Btns
+.drag-box {
+  cursor: grab;
+}

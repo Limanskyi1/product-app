@@ -4,11 +4,11 @@ import { Navbar } from "@/widgets/navbar";
 import { Categories } from "@/features/filters";
 import { RoadmapWidget } from "@/widgets/roadmap";
 import { ProductsList } from "@/entities/product";
-import { useFetchProducts } from "@/entities/product/model/useFetchProducts";
+import { useFetchSuggestions } from "../model/useFetchSuggestions";
 import classes from "./HomePage.module.scss";
 
 export const HomePage = () => {
-  const { loading, suggestions } = useFetchProducts();
+  const { loading, suggestions } = useFetchSuggestions();
   return (
     <HomeLayout>
       <div className={classes.leftSide}>

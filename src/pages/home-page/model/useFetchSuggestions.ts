@@ -1,10 +1,9 @@
 import { productApi } from "@/shared/api/ProductApi";
 import { useAppContext } from "@/shared/hooks";
 import { useEffect, useState } from "react";
-import { IProduct } from "./types";
 import { ICategory } from "@/features/filters/model/types";
+import { IProduct } from "@/entities/product/model/types";
 import queryString from "query-string";
-
 
 const createParams = (category:string,sortParams:string) => {
   let params = "";
@@ -14,8 +13,7 @@ const createParams = (category:string,sortParams:string) => {
   return `${params}&${sortParams}`;
 }
 
-
-export const useFetchProducts = () => {
+export const useFetchSuggestions = () => {
   const [suggestions, setSuggestions] = useState<IProduct[]>([]);
   const [loading,setLoading] = useState<boolean>(true);
   const { sortParams ,activeCategory} = useAppContext();

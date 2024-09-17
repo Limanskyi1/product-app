@@ -94,6 +94,16 @@ class ProductApi {
         }
     }
 
+
+    async changeProductStatus(id:string,status:string){
+        try {
+            await axios.put(this.apiUrl + id, {
+                status: status,
+            });
+        } catch (error) {
+            console.error("Failed to change product status", error);
+        }
+    }
 }
 
 export const productApi = new ProductApi('https://66d39aa9184dce1713d08d80.mockapi.io/products/');

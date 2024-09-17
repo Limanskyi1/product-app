@@ -1,10 +1,11 @@
 import { Spinner } from "@/shared/ui/Spinner";
-import { useFetchRoadmapProducts } from "../../../shared/hooks/useFetchRoadmapProducts";
-import classes from "./RoadmapTable.module.scss";
 import { RoadmapCol } from "./RoadmapCol";
+import { useFetchRoadmapProducts } from "../model/useFetchRoadmapProducts";
+import classes from "./RoadmapTable.module.scss";
+import { Column } from "@/features/drag-and-drop/ui/Column";
 
 export const RoadmapTable = () => {
-  const { roadmapItems, loading } = useFetchRoadmapProducts();
+  const { roadmapItems, loading , revalidate } = useFetchRoadmapProducts();
 
   if (loading) {
     return <Spinner className={classes.loading} />;
@@ -13,7 +14,9 @@ export const RoadmapTable = () => {
   return (
     <div className={classes.table}>
       {roadmapItems.map((item) => (
-        <RoadmapCol key={item.status} name={item.status} items={item.items} />
+        <Column revalidate={revalidate} status={item.status} key={item.status}>
+          <RoadmapCol  name={item.status} items={item.items} />
+        </Column>
       ))}
     </div>
   );

@@ -1,10 +1,10 @@
-import { useFetchRoadmapProducts } from "@/shared/hooks/useFetchRoadmapProducts";
 import { Link } from "react-router-dom";
 import { Spinner } from "@/shared/ui/Spinner";
 import { IProduct } from "@/entities/product/model/types";
 import { formatString } from "@/shared/utils";
-import { roadmapColors } from "@/shared/constants";
 import { FadeInItemBottom } from "@/shared/libs/createMotionWrapper";
+import { roadmapColors } from "@/entities/product/constants";
+import { useFetchRoadmapProducts } from "../model/useFetchRoadmapProducts";
 import classes from "./RoadmapWidget.module.scss";
 
 interface IRoadmapWidgetItem {

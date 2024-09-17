@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { roadmapColors } from "../../../shared/constants";
-import classes from "./RoadmapProduct.module.scss";
 import { formatString } from "../../../shared/utils";
 import { Upvotes } from "@/features/upvotes";
 import { IComment } from "@/entities/comment/model/comment";
 import { CommentCounter } from "@/shared/ui/CommentCounter";
+import classes from "./RoadmapProduct.module.scss";
+import { roadmapColors } from "../constants";
 
 interface RoadmapProductProps {
   status: string;
